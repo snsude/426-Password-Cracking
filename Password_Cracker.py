@@ -6,13 +6,9 @@ import bcrypt
 import argparse #pass arguments
 import csv #read csv or write save
 from typing import List, Dict, Tuple, Optional
-from rich.panel import Panel
-from rich.table import Table
-from rich import print as rprint
-from rich.progress import Progress, SpinnerColumn, BarColumn, TextColumn, TimeElapsedColumn
-from rich.prompt import Confirm
-from rich.console import Console
 import time
+from abc import ABC, abstractmethod
+from dataclasses import dataclass
 import sys
 from pathlib import Path
 
