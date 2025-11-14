@@ -54,6 +54,19 @@ try:
   PYFIGLET_AVAILABLE = False
 except:
   PYFIGLET_AVAILABLE = False
+@dataclass
+class HashEntry:
+  """Representing a hash entry with optional username and metadata"""
+  hash_value : str  #The actual hash value
+  user: Optional[str] = None #use name default to Nome
+  hash_type: Optional[str] = None #Algorithm used default to none
+
+  def __str__(self):
+    #if the user exist, show the user name and hash value
+    if self.user:
+      return "{} : {}".format(self.user, self.hash_value)
+    #Otherwise return the hash value
+    return self.hash_value
 HASH_ALGORITHMS = {
   "1": {"name": "MD5", "func": hashlib.md5},
   "2": {"name" :"SHA-1", "func": hashlib.sha1 },
