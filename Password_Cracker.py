@@ -54,6 +54,7 @@ try:
   PYFIGLET_AVAILABLE = False
 except:
   PYFIGLET_AVAILABLE = False
+  
 @dataclass
 class HashEntry:
   """Representing a hash entry with optional username and metadata"""
